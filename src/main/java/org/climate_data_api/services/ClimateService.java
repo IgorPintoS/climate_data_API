@@ -1,6 +1,7 @@
 package org.climate_data_api.services;
 
 import org.climate_data_api.config.ConfigLoader;
+import org.climate_data_api.model.Climate;
 
 import java.net.URI;
 import java.net.URLEncoder;
@@ -34,5 +35,17 @@ public class ClimateService {
         }
 
         return response.body(); //retorna os dados meteriológicos
+    }
+
+    public void printClimateData(Climate climate) {
+        System.out.println("Weather information for " + climate.getCity() + " - " + climate.getCountry() + ".\n"
+                            + "Date time: " + climate.getDateTime() + ".\n"
+                            + "Current temperature: " + climate.getCurrentTemperature() + "Cº.\n"
+                            + "Wind chill: " + climate.getWindChill() + "ºC.\n"
+                            + "Weather condition: " + climate.getWeatherCondition() + ".\n"
+                            + "Air humidity percentage: " + climate.getAirHumidity() + "%.\n"
+                            + "Wind speed: " + climate.getWindSpeed() + " km/h.\n"
+                            + "Atmospheric pressure: " + climate.getAtmosphericPressure() + " mb."
+        );
     }
 }
