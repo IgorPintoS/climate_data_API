@@ -14,7 +14,7 @@ public class ConfigLoader {
             if (inputStream == null) {
                 throw new RuntimeException("File not found.");
             }
-            return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
+            return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8).trim();
 
         } catch (Exception e) {
             throw new RuntimeException("Fail to read resources: " + e.getMessage());
